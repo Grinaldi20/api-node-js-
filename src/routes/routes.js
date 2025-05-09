@@ -1,12 +1,12 @@
 const express = require('express'); 
 const router = express.Router(); 
 
-const UsuariosController = require('../controllers/usuarios'); 
+const FeedbacksController = require('../controllers/Feedbacks');
 
-router.get('/usuarios', UsuariosController.listarUsuarios); 
-router.post('/usuarios', UsuariosController.cadastrarUsuarios); 
-router.patch('/usuarios', UsuariosController.editarUsuarios); 
-router.delete('/usuarios', UsuariosController.apagarUsuarios); 
+router.post('/feedbacks', FeedbacksController.cadastrarFeedbackss); 
+router.get('/feedbacks', FeedbacksController.listarFeedbacks); 
+router.patch('/feedbacks', FeedbacksController.editarFeedbacks); 
+router.delete('/feedbacks', FeedbacksController.apagarFeedbacks); 
 
 
-module.exports = router
+module.exports = router ; 
