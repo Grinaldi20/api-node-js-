@@ -6,10 +6,18 @@ module.exports = {
      
 
         try {
+const sql=`
+SELECT fbck_id, usu_id, fbck_mensagem, fbck_data_envio,
+fbck_avaliacao FROM feedbacks;
+`;
+
+const [rows] = await db.query(sql);
+
             return response.status(200).json({
                 sucesso: true, 
-                mensagem: 'Listar os Feedbacks', 
-                dados: null
+                mensagem: 'Listar os Feedbacks',
+                itens: rows.length, 
+                dados: rows
             });
         } catch (error) {
             return response.status(500).json({
